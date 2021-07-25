@@ -6,6 +6,7 @@ import icu.junyao.eduService.entity.EduVideo;
 import icu.junyao.eduService.mapper.EduVideoMapper;
 import icu.junyao.eduService.service.EduVideoService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,9 @@ import java.util.List;
  * @since 2021-06-16
  */
 @Service
+@RequiredArgsConstructor
 public class EduVideoServiceImpl extends ServiceImpl<EduVideoMapper, EduVideo> implements EduVideoService {
-    @Autowired
-    private VodClient vodClient;
+    private final VodClient vodClient;
 
     @Override
     public void removeVideoByCourseId(String courseId) {

@@ -40,7 +40,7 @@ public class UcenterMember implements Serializable {
     private String id;
 
     @ApiModelProperty(value = "微信openid")
-    private String openId;
+    private String openid;
 
     @ApiModelProperty(value = "手机号")
     private String mobile;

@@ -1,16 +1,22 @@
 package icu.junyao.eduService.controller.front;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import icu.junyao.commonUtils.JwtUtils;
 import icu.junyao.commonUtils.R;
+import icu.junyao.commonUtils.ordervo.CourseWebVoOrder;
+import icu.junyao.eduService.client.OrdersClient;
 import icu.junyao.eduService.entity.EduCourse;
 import icu.junyao.eduService.entity.chapter.ChapterVo;
 import icu.junyao.eduService.entity.frontVo.CourseFrontVo;
 import icu.junyao.eduService.entity.frontVo.CourseWebVo;
 import icu.junyao.eduService.service.EduChapterService;
 import icu.junyao.eduService.service.EduCourseService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
@@ -20,13 +26,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/eduService/courseFront")
 @CrossOrigin
+@RequiredArgsConstructor
 public class CourseFrontController {
-
-    @Autowired
-    private EduCourseService courseService;
-
-    @Autowired
-    private EduChapterService chapterService;
+    private final EduCourseService courseService;
+    private final EduChapterService chapterService;
+    private final OrdersClient ordersClient;
 
 
 
@@ -54,14 +58,29 @@ public class CourseFrontController {
      * @return
      */
     @GetMapping("getFrontCourseInfo/{courseId}")
-    public R getFrontCourseInfo(@PathVariable String courseId) {
+    public R getFrontCourseInfo(@PathVariable String courseId, HttpServletRequest request) {
         //根据课程id，编写sql语句查询课程信息
         CourseWebVo courseWebVo = courseService.getBaseCourseInfo(courseId);
 
         //根据课程id查询章节和小节
         List<ChapterVo> chapterVideoList = chapterService.getChapterVideoByCourseId(courseId);
 
-        return R.ok().data("courseWebVo",courseWebVo).data("chapterVideoList",chapterVideoList);
+        //根据课程id和用户id查询当前课程是否已经支付过了
+        boolean buyCourse = ordersClient.isBuyCourse(courseId, JwtUtils.getMemberIdByJwtToken(request));
+        return R.ok().data("courseWebVo",courseWebVo).data("chapterVideoList",chapterVideoList).data("isBuy",buyCourse);
+    }
+
+    /**
+     * 根据课程id查询课程信息
+     * @param id 课程id
+     * @return 课程信息
+     */
+    @PostMapping("getCourseInfoOrder/{id}")
+    public CourseWebVoOrder getCourseInfoOrder(@PathVariable String id) {
+        CourseWebVo courseInfo = courseService.getBaseCourseInfo(id);
+        CourseWebVoOrder courseWebVoOrder = new CourseWebVoOrder();
+        BeanUtils.copyProperties(courseInfo,courseWebVoOrder);
+        return courseWebVoOrder;
     }
 }
 

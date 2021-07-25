@@ -11,6 +11,7 @@ import icu.junyao.eduService.entity.vo.CoursePublishVo;
 import icu.junyao.eduService.entity.vo.EduCourseQuery;
 import icu.junyao.eduService.entity.vo.EduTeacherQuery;
 import icu.junyao.eduService.service.EduCourseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -28,13 +29,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/eduService/course")
 @CrossOrigin
+@RequiredArgsConstructor
 public class EduCourseController {
-    @Autowired
-    private EduCourseService courseService;
+
+    private final EduCourseService courseService;
 
     /**
-     * 课程列表 基本实现
-     *     TODO  完善条件查询带分页
+     * 课程列表 条件分页查询
      * @return
      */
     @PostMapping("pageCourseCondition/{current}/{limit}")

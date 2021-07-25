@@ -4,7 +4,7 @@ import icu.junyao.commonUtils.R;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @CrossOrigin  //解决跨域
+ * @CrossOrigin 解决跨域
  * @author wu
  */
 @RestController

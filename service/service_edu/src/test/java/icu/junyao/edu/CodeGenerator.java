@@ -13,7 +13,7 @@ import org.junit.Test;
 
 /**
  * @author
- * @since 2018/12/13
+ * @since 2021-06-06
  */
 public class CodeGenerator {
 
@@ -26,7 +26,7 @@ public class CodeGenerator {
         // 2、全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = "D:/IdeaProjects/";
-        gc.setOutputDir(projectPath + "junyao_edu/service/service_edu/src/main/java");
+        gc.setOutputDir(projectPath + "junyao_edu/service/service_statistics/src/main/java");
         gc.setAuthor("junyao");
         gc.setOpen(false); //生成后是否打开资源管理器
         gc.setFileOverride(false); //重新生成时文件是否覆盖
@@ -48,7 +48,7 @@ public class CodeGenerator {
 
         // 4、包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName("eduService"); //模块名
+        pc.setModuleName("statisticsService"); //模块名
         pc.setParent("icu.junyao");
         pc.setController("controller");
         pc.setEntity("entity");
@@ -58,7 +58,7 @@ public class CodeGenerator {
 
         // 5、策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setInclude("edu_course", "edu_course_description", "edu_chapter", "edu_video");
+        strategy.setInclude("statistics_daily");
         strategy.setNaming(NamingStrategy.underline_to_camel);//数据库表映射到实体的命名策略
         //strategy.setTablePrefix(pc.getModuleName() + "_"); //生成实体时去掉表前缀
 

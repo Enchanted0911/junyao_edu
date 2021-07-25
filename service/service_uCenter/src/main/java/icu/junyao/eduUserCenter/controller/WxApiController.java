@@ -7,6 +7,7 @@ import icu.junyao.eduUserCenter.service.UcenterMemberService;
 import icu.junyao.eduUserCenter.utils.ConstantWxUtils;
 import icu.junyao.eduUserCenter.utils.HttpClientUtils;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -22,10 +23,10 @@ import java.util.HashMap;
 @CrossOrigin
 @Controller
 @RequestMapping("/api/uerCenter/wx")
+@RequiredArgsConstructor
 public class WxApiController {
 
-    @Autowired
-    private UcenterMemberService memberService;
+    private final UcenterMemberService memberService;
 
 
 
@@ -91,7 +92,7 @@ public class WxApiController {
                 String headImgUrl = (String) userInfoMap.get("headimgurl");
 
                 member = new UcenterMember();
-                member.setOpenId(openId);
+                member.setOpenid(openId);
                 member.setNickname(nickname);
                 member.setAvatar(headImgUrl);
                 memberService.save(member);

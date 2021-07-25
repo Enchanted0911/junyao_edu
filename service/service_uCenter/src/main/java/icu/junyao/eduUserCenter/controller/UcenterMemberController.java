@@ -3,10 +3,12 @@ package icu.junyao.eduUserCenter.controller;
 
 import icu.junyao.commonUtils.JwtUtils;
 import icu.junyao.commonUtils.R;
+import icu.junyao.commonUtils.ordervo.UcenterMemberOrder;
 import icu.junyao.eduUserCenter.entity.UcenterMember;
 import icu.junyao.eduUserCenter.entity.vo.RegisterVo;
 import icu.junyao.eduUserCenter.service.UcenterMemberService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,9 +24,9 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 @RequestMapping("/eduUserCenter/member")
 @CrossOrigin
+@RequiredArgsConstructor
 public class UcenterMemberController {
-    @Autowired
-    private UcenterMemberService memberService;
+    private final UcenterMemberService memberService;
     /**
      * 登录
      * @param member
@@ -64,6 +66,36 @@ public class UcenterMemberController {
         //查询数据库根据用户id获取用户信息
         UcenterMember member = memberService.getById(memberId);
         return R.ok().data("userInfo",member);
+    }
+
+    @GetMapping("getMemberInfoById/{id}")
+    public R getMemberInfoById(@PathVariable String id) {
+        UcenterMember member = memberService.getById(id);
+        return R.ok().data("userInfo",member);
+    }
+
+    /**
+     * 根据用户id获取用户信息
+     * @param id
+     * @return
+     */
+    @PostMapping("getUserInfoOrder/{id}")
+    public UcenterMemberOrder getUserInfoOrder(@PathVariable String id) {
+        UcenterMember member = memberService.getById(id);
+        UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
+        BeanUtils.copyProperties(member,ucenterMemberOrder);
+        return ucenterMemberOrder;
+    }
+
+    /**
+     * 查询某一天的用户在线人数
+     * @param day
+     * @return
+     */
+    @GetMapping("countRegister/{day}")
+    public R countRegister(@PathVariable String day) {
+        Integer count = memberService.countRegisterDay(day);
+        return R.ok().data("countRegister",count);
     }
 }
 

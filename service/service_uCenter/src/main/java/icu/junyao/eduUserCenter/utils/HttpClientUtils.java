@@ -282,6 +282,7 @@ public class HttpClientUtils {
     private static CloseableHttpClient createSSLInsecureClient() throws GeneralSecurityException {
         try {
             SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
+                @Override
                 public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
                     return true;
                 }
@@ -327,12 +328,6 @@ public class HttpClientUtils {
             map.put("page", "222");
             String str= postForm("https://localhost:443/ssl/test.shtml",map,null, 10000, 10000);*/
             System.out.println(str);
-        } catch (ConnectTimeoutException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (SocketTimeoutException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

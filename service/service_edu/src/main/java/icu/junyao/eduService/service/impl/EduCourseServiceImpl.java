@@ -15,6 +15,7 @@ import icu.junyao.eduService.service.EduCourseDescriptionService;
 import icu.junyao.eduService.service.EduCourseService;
 import icu.junyao.eduService.service.EduVideoService;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,14 +38,12 @@ import java.util.Map;
  */
 @Service
 @CacheConfig(cacheNames = "course")
+@RequiredArgsConstructor
 public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse> implements EduCourseService {
 
-    @Autowired
-    private EduCourseDescriptionService courseDescriptionService;
-    @Autowired
-    private EduVideoService eduVideoService;
-    @Autowired
-    private EduChapterService chapterService;
+    private final EduCourseDescriptionService courseDescriptionService;
+    private final EduVideoService eduVideoService;
+    private final EduChapterService chapterService;
 
 
     /**
@@ -148,29 +147,18 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //2 根据讲师id查询所讲课程
         QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
         //判断条件值是否为空，不为空拼接
-        if(!StringUtils.isEmpty(courseFrontVo.getSubjectParentId())) {
-            //一级分类
-            wrapper.eq("subject_parent_id",courseFrontVo.getSubjectParentId());
-        }
-        if(!StringUtils.isEmpty(courseFrontVo.getSubjectId())) {
-            //二级分类
-            wrapper.eq("subject_id",courseFrontVo.getSubjectId());
-        }
-        if(!StringUtils.isEmpty(courseFrontVo.getBuyCountSort())) {
-            //关注度
-            wrapper.orderByDesc("buy_count");
-        }
-        if (!StringUtils.isEmpty(courseFrontVo.getGmtCreateSort())) {
-            //最新
-            wrapper.orderByDesc("gmt_create");
-        }
+        //一级分类
+        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectParentId()), "subject_parent_id", courseFrontVo.getSubjectParentId());
+        //二级分类
+        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectId()), "subject_id", courseFrontVo.getSubjectId());
+        //关注度
+        wrapper.orderByDesc(StringUtils.isNotEmpty(courseFrontVo.getBuyCountSort()), "buy_count");
+        //最新
+        wrapper.orderByDesc(StringUtils.isEmpty(courseFrontVo.getGmtCreateSort()), "gmt_create");
+        //价格
+        wrapper.orderByDesc(StringUtils.isEmpty(courseFrontVo.getPriceSort()), "price");
 
-        if (!StringUtils.isEmpty(courseFrontVo.getPriceSort())) {
-            //价格
-            wrapper.orderByDesc("price");
-        }
-
-        baseMapper.selectPage(pageParam,wrapper);
+        baseMapper.selectPage(pageParam, wrapper);
 
         List<EduCourse> records = pageParam.getRecords();
         long current = pageParam.getCurrent();

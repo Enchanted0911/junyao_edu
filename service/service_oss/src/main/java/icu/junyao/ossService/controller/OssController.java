@@ -2,6 +2,7 @@ package icu.junyao.ossService.controller;
 
 import icu.junyao.commonUtils.R;
 import icu.junyao.ossService.service.OssService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,10 +13,10 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/eduOss/fileOss")
 @CrossOrigin
+@RequiredArgsConstructor
 public class OssController {
 
-    @Autowired
-    private OssService ossService;
+    private final OssService ossService;
 
 
     /**

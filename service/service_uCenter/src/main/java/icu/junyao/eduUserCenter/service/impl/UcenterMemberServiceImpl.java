@@ -9,6 +9,7 @@ import icu.junyao.eduUserCenter.service.UcenterMemberService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import icu.junyao.eduUserCenter.utils.MD5;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -23,9 +24,10 @@ import org.springframework.stereotype.Service;
  * @since 2021-06-22
  */
 @Service
+@RequiredArgsConstructor
 public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, UcenterMember> implements UcenterMemberService {
-    @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+
+    private final RedisTemplate<String, String> redisTemplate;
 
     /**
      * 登录
@@ -69,8 +71,7 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
 
         //登录成功
         //生成token字符串，使用jwt工具类
-        String jwtToken = JwtUtils.getJwtToken(mobileMember.getId(), mobileMember.getNickname());
-        return jwtToken;
+        return JwtUtils.getJwtToken(mobileMember.getId(), mobileMember.getNickname());
     }
 
     /**
@@ -126,7 +127,12 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
     @Override
     public UcenterMember getOpenIdMember(String openId) {
         QueryWrapper<UcenterMember> wrapper = new QueryWrapper<>();
-        wrapper.eq("openid",openId);
+        wrapper.eq("openid", openId);
         return baseMapper.selectOne(wrapper);
+    }
+
+    @Override
+    public Integer countRegisterDay(String day) {
+        return baseMapper.countRegisterDay(day);
     }
 }
