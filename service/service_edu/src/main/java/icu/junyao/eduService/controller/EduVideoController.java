@@ -7,6 +7,7 @@ import icu.junyao.eduService.entity.EduChapter;
 import icu.junyao.eduService.entity.EduVideo;
 import icu.junyao.eduService.service.EduVideoService;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
+import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +22,10 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/eduService/video")
-@CrossOrigin
+@RequiredArgsConstructor
 public class EduVideoController {
-    @Autowired
-    private EduVideoService videoService;
-    @Autowired
-    private VodClient vodClient;
+    private final EduVideoService videoService;
+    private final VodClient vodClient;
 
     /**
      * 根据小节id查询

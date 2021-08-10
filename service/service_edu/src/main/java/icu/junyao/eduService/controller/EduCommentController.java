@@ -27,7 +27,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/eduService/comment")
 @RequiredArgsConstructor
-@CrossOrigin
 public class EduCommentController {
     private final EduCommentService eduCommentService;
     private final UcenterClient ucenterClient;

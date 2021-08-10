@@ -23,7 +23,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/eduUserCenter/member")
-@CrossOrigin
 @RequiredArgsConstructor
 public class UcenterMemberController {
     private final UcenterMemberService memberService;

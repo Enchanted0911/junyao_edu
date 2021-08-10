@@ -28,7 +28,6 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduService/course")
-@CrossOrigin
 @RequiredArgsConstructor
 public class EduCourseController {
 

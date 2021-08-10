@@ -4,6 +4,7 @@ package icu.junyao.eduService.controller;
 import icu.junyao.commonUtils.R;
 import icu.junyao.eduService.entity.subject.OneSubject;
 import icu.junyao.eduService.service.EduSubjectService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +22,9 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduService/subject")
-@CrossOrigin
+@RequiredArgsConstructor
 public class EduSubjectController {
-    @Autowired
-    private EduSubjectService subjectService;
+    private final EduSubjectService subjectService;
 
 
 

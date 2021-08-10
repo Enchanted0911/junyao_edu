@@ -10,6 +10,7 @@ import icu.junyao.eduService.service.EduTeacherService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
@@ -30,11 +31,10 @@ import java.util.List;
 @Api(tags="讲师管理")
 @RestController
 @RequestMapping("/eduService/teacher")
-@CrossOrigin
 @CacheConfig(cacheNames = "teacher")
+@RequiredArgsConstructor
 public class EduTeacherController {
-    @Autowired
-    private EduTeacherService eduTeacherService;
+    private final EduTeacherService eduTeacherService;
 
     @ApiOperation(value = "所有讲师列表")
     @GetMapping("/findAll")

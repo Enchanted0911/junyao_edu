@@ -18,7 +18,6 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/eduStatistics/statistics-daily")
-@CrossOrigin
 @RequiredArgsConstructor
 public class StatisticsDailyController {
     private final StatisticsDailyService statisticsDailyService;

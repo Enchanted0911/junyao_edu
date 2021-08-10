@@ -7,6 +7,7 @@ import icu.junyao.eduService.entity.EduCourse;
 import icu.junyao.eduService.entity.EduTeacher;
 import icu.junyao.eduService.service.EduCourseService;
 import icu.junyao.eduService.service.EduTeacherService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,14 +19,11 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/eduService/teacherFront")
-@CrossOrigin
+@RequiredArgsConstructor
 public class TeacherFrontController {
 
-    @Autowired
-    private EduTeacherService teacherService;
-
-    @Autowired
-    private EduCourseService courseService;
+    private final EduTeacherService teacherService;
+    private final EduCourseService courseService;
 
 
 

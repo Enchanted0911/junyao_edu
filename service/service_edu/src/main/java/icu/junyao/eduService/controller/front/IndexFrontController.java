@@ -6,6 +6,7 @@ import icu.junyao.eduService.entity.EduCourse;
 import icu.junyao.eduService.entity.EduTeacher;
 import icu.junyao.eduService.service.EduCourseService;
 import icu.junyao.eduService.service.EduTeacherService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -21,14 +22,11 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduService/indexFront")
-@CrossOrigin
+@RequiredArgsConstructor
 public class IndexFrontController {
 
-    @Autowired
-    private EduCourseService courseService;
-
-    @Autowired
-    private EduTeacherService teacherService;
+    private final EduCourseService courseService;
+    private final EduTeacherService teacherService;
 
     /**
      * 查询前8条热门课程，查询前4条名师

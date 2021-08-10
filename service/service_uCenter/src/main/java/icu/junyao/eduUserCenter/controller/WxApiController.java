@@ -8,9 +8,9 @@ import icu.junyao.eduUserCenter.utils.ConstantWxUtils;
 import icu.junyao.eduUserCenter.utils.HttpClientUtils;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -20,7 +20,6 @@ import java.util.HashMap;
  * 只是请求地址，不需要返回数据
  * @author wu
  */
-@CrossOrigin
 @Controller
 @RequestMapping("/api/uerCenter/wx")
 @RequiredArgsConstructor

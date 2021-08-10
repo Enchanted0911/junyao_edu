@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @RequestMapping("/eduOrder/order")
-@CrossOrigin
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;

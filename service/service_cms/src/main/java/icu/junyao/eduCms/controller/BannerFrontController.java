@@ -4,6 +4,7 @@ package icu.junyao.eduCms.controller;
 import icu.junyao.commonUtils.R;
 import icu.junyao.eduCms.entity.CrmBanner;
 import icu.junyao.eduCms.service.CrmBannerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,16 +18,15 @@ import java.util.List;
  * 前台banner显示
  * </p>
  *
- * @author testjava
+ * @author wu
  * @since 2020-03-07
  */
 @RestController
 @RequestMapping("/eduCms/bannerFront")
-@CrossOrigin
+@RequiredArgsConstructor
 public class BannerFrontController {
 
-    @Autowired
-    private CrmBannerService bannerService;
+    private final CrmBannerService bannerService;
 
 
 

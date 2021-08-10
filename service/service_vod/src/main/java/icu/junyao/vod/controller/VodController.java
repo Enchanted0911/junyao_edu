@@ -9,6 +9,7 @@ import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
 import icu.junyao.vod.service.VodService;
 import icu.junyao.vod.utils.ConstantVodUtils;
 import icu.junyao.vod.utils.InitObject;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,11 +21,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduVod/video")
-@CrossOrigin
+@RequiredArgsConstructor
 public class VodController {
 
-    @Autowired
-    private VodService vodService;
+    private final VodService vodService;
 
     /**
      * 上传视频到阿里云

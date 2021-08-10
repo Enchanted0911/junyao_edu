@@ -26,7 +26,7 @@ import lombok.experimental.Accessors;
  * 首页banner表
  * </p>
  *
- * @author testjava
+ * @author wu
  * @since 2020-03-07
  */
 @Data

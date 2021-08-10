@@ -3,6 +3,7 @@ package icu.junyao.msmService.controller;
 import icu.junyao.commonUtils.R;
 import icu.junyao.msmService.service.MsmService;
 import icu.junyao.msmService.utils.RandomUtil;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.StringUtils;
@@ -17,14 +18,12 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @RequestMapping("/eduMsm/msm")
-@CrossOrigin
+@RequiredArgsConstructor
 public class MsmController {
 
-    @Autowired
-    private MsmService msmService;
+    private final MsmService msmService;
 
-    @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private final RedisTemplate<String,String> redisTemplate;
 
 
 

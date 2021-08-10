@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan(basePackages = {"icu.junyao"})
 @EnableDiscoveryClient
 @EnableFeignClients
-@MapperScan("icu.junyao.statistics.mapper")
+@MapperScan("icu.junyao.statisticsService.mapper")
 @EnableScheduling
 public class StatisticsApplication {
 
