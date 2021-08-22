@@ -1,5 +1,6 @@
 package icu.junyao.security.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -19,6 +20,9 @@ import java.io.Serializable;
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	@ApiModelProperty(value = "id")
+	@TableId
+	private String id;
 
 	@ApiModelProperty(value = "用户名")
 	private String username;

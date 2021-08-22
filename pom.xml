@@ -33,8 +33,8 @@
         <commons-io.version>2.9.0</commons-io.version>
         <httpclient.version>4.5.13</httpclient.version>
         <gson.version>2.8.7</gson.version>
-        <aliyun-java-sdk-core.version>4.5.1</aliyun-java-sdk-core.version>
-        <aliyun-java-sdk-vod.version>2.15.11</aliyun-java-sdk-vod.version>
+        <aliyun-java-sdk-core.version>4.5.20</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-vod.version>2.15.12</aliyun-java-sdk-vod.version>
         <fastjson.version>1.2.76</fastjson.version>
         <json.version>20210307</json.version>
         <docker.image.prefix>zx</docker.image.prefix>
@@ -42,12 +42,13 @@
         <spring-cloud-starter-loadbalancer.version>3.0.3</spring-cloud-starter-loadbalancer.version>
         <spring-boot-starter-data-redis.version>2.5.1</spring-boot-starter-data-redis.version>
         <commons-pool2.version>2.10.0</commons-pool2.version>
-        <jedis.version>3.6.0</jedis.version>
+<!--        <jedis.version>3.6.0</jedis.version>-->
         <jackson-datatype-jsr310.version>2.12.3</jackson-datatype-jsr310.version>
         <jjwt.version>0.9.1</jjwt.version>
         <gateway.version>3.0.3</gateway.version>
         <openfeign.version>3.0.3</openfeign.version>
         <knife4j-spring-boot-starter.version>3.0.3</knife4j-spring-boot-starter.version>
+        <bootstrap.version>3.0.3</bootstrap.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -101,6 +102,13 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openfeign.version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-bootstrap -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>${bootstrap.version}</version>
+            </dependency>
+
             <!--mybatis-plus 持久层-->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -199,12 +207,12 @@
                 <artifactId>commons-pool2</artifactId>
                 <version>${commons-pool2.version}</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
-            <dependency>
-                <groupId>redis.clients</groupId>
-                <artifactId>jedis</artifactId>
-                <version>${jedis.version}</version>
-            </dependency>
+<!--            &lt;!&ndash; https://mvnrepository.com/artifact/redis.clients/jedis &ndash;&gt;-->
+<!--            <dependency>-->
+<!--                <groupId>redis.clients</groupId>-->
+<!--                <artifactId>jedis</artifactId>-->
+<!--                <version>${jedis.version}</version>-->
+<!--            </dependency>-->
             <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -227,6 +235,13 @@
                 <artifactId>dysmsapi20170525</artifactId>
                 <version>2.0.4</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>2.5.0</version>
+            </dependency>
+
         </dependencies>
 
     </dependencyManagement>

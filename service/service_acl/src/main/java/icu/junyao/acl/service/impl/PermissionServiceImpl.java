@@ -102,14 +102,14 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
     @Override
     public List<String> selectPermissionValueByUserId(String id) {
 
-        List<String> selectPermissionValueList = null;
+        List<String> selectPermissionValueList;
         selectPermissionValueList = baseMapper.selectPermissionValueByUserId(id);
         return selectPermissionValueList;
     }
 
     @Override
     public List<JSONObject> selectPermissionByUserId(String userId) {
-        List<Permission> selectPermissionList = null;
+        List<Permission> selectPermissionList;
         selectPermissionList = baseMapper.selectPermissionByUserId(userId);
         List<Permission> permissionList = PermissionHelper.build(selectPermissionList);
         return MenuHelper.build(permissionList);
