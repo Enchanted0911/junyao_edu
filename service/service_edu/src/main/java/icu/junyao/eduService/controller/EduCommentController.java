@@ -42,7 +42,7 @@ public class EduCommentController {
     public R save(@RequestBody EduComment comment, HttpServletRequest request) {
         String memberId = JwtUtils.getMemberIdByJwtToken(request);
         if (StringUtils.isEmpty(memberId)) {
-            return R.error().code(28004).message("请登录");
+            return R.error().code(28004).message("请先登录再评论哦");
         }
         Object uCenterInfo = (ucenterClient.getMemberInfoById(memberId).getData().get("userInfo"));
         LinkedHashMap<String, Object> map = (LinkedHashMap<String, Object>) uCenterInfo;

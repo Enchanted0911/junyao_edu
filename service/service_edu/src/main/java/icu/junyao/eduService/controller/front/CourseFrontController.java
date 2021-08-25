@@ -12,6 +12,7 @@ import icu.junyao.eduService.entity.frontVo.CourseWebVo;
 import icu.junyao.eduService.service.EduChapterService;
 import icu.junyao.eduService.service.EduCourseService;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -64,8 +65,13 @@ public class CourseFrontController {
         //根据课程id查询章节和小节
         List<ChapterVo> chapterVideoList = chapterService.getChapterVideoByCourseId(courseId);
 
+        boolean buyCourse;
         //根据课程id和用户id查询当前课程是否已经支付过了
-        boolean buyCourse = ordersClient.isBuyCourse(courseId, JwtUtils.getMemberIdByJwtToken(request));
+        if (StringUtils.isEmpty(JwtUtils.getMemberIdByJwtToken(request))) {
+            buyCourse = false;
+        } else {
+            buyCourse = ordersClient.isBuyCourse(courseId, JwtUtils.getMemberIdByJwtToken(request));
+        }
         return R.ok().data("courseWebVo",courseWebVo).data("chapterVideoList",chapterVideoList).data("isBuy",buyCourse);
     }
 
