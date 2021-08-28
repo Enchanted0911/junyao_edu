@@ -3,6 +3,7 @@ package icu.junyao.eduService.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import icu.junyao.eduService.constant.EduConstants;
 import icu.junyao.eduService.entity.EduCourse;
 import icu.junyao.eduService.entity.EduCourseDescription;
 import icu.junyao.eduService.entity.frontVo.CourseFrontVo;
@@ -59,6 +60,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //CourseInfoVo对象转换eduCourse对象
         EduCourse eduCourse = new EduCourse();
         BeanUtils.copyProperties(courseInfoVo, eduCourse);
+        eduCourse.setCover(eduCourse.getCover() == null ? EduConstants.DEFAULT_COURSE_COVER : eduCourse.getCover());
         int insert = baseMapper.insert(eduCourse);
         if (insert == 0) {
             //添加失败
@@ -148,15 +150,19 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
         //判断条件值是否为空，不为空拼接
         //一级分类
-        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectParentId()), "subject_parent_id", courseFrontVo.getSubjectParentId());
+        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectParentId())
+                , "subject_parent_id", courseFrontVo.getSubjectParentId());
         //二级分类
-        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectId()), "subject_id", courseFrontVo.getSubjectId());
+        wrapper.eq(StringUtils.isNotEmpty(courseFrontVo.getSubjectId())
+                , "subject_id", courseFrontVo.getSubjectId());
         //关注度
         wrapper.orderByDesc(StringUtils.isNotEmpty(courseFrontVo.getBuyCountSort()), "buy_count");
         //最新
         wrapper.orderByDesc(StringUtils.isEmpty(courseFrontVo.getGmtCreateSort()), "gmt_create");
         //价格
         wrapper.orderByDesc(StringUtils.isEmpty(courseFrontVo.getPriceSort()), "price");
+        courseFrontVo.setCourseName(courseFrontVo.getCourseName() == null ? "" : courseFrontVo.getCourseName());
+        wrapper.like("title", courseFrontVo.getCourseName());
 
         baseMapper.selectPage(pageParam, wrapper);
 

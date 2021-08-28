@@ -1,0 +1,42 @@
+2021-08-27 17:51:03.334 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.0.Final
+2021-08-27 17:51:04.253 [main] INFO  c.a.n.client.config.impl.LocalConfigInfoProcessor - LOCAL_SNAPSHOT_PATH:C:\Users\BF\nacos\config
+2021-08-27 17:51:04.376 [main] INFO  com.alibaba.nacos.client.config.utils.JvmUtil - isMultiInstance:false
+2021-08-27 17:51:04.392 [main] INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-edu-dev.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-edu.properties,DEFAULT_GROUP'}, BootstrapPropertySource {name='bootstrapProperties-edu,DEFAULT_GROUP'}]
+2021-08-27 17:51:04.401 [main] INFO  icu.junyao.eduService.EduApplication - The following profiles are active: dev
+2021-08-27 17:51:05.520 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-08-27 17:51:05.523 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-08-27 17:51:05.560 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2021-08-27 17:51:05.812 [main] INFO  o.springframework.cloud.context.scope.GenericScope - BeanFactory id=3cdcab91-c77f-3899-8a21-a46ab71daad3
+2021-08-27 17:51:06.113 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.cloud.sentinel-com.alibaba.cloud.sentinel.SentinelProperties' of type [com.alibaba.cloud.sentinel.SentinelProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-27 17:51:06.117 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration' of type [com.alibaba.cloud.sentinel.custom.SentinelAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-08-27 17:51:06.396 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8001 (http)
+2021-08-27 17:51:06.406 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8001"]
+2021-08-27 17:51:06.407 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-08-27 17:51:06.407 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.46]
+2021-08-27 17:51:06.576 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2021-08-27 17:51:06.576 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2155 ms
+2021-08-27 17:51:08.030 [main] INFO  c.a.cloud.sentinel.SentinelWebAutoConfiguration - [Sentinel Starter] register SentinelWebInterceptor with urlPatterns: [/**].
+2021-08-27 17:51:09.473 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-08-27 17:51:09.474 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Environment :null
+2021-08-27 17:51:09.474 [main] INFO  com.alibaba.nacos.client.naming - initializer namespace from System Property :null
+2021-08-27 17:51:09.722 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8001"]
+2021-08-27 17:51:09.742 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8001 (http) with context path ''
+2021-08-27 17:51:09.747 [main] INFO  com.alibaba.nacos.client.naming - [BEAT] adding beat: BeatInfo{port=8001, ip='10.0.6.13', weight=1.0, serviceName='DEFAULT_GROUP@@service-edu', cluster='DEFAULT', metadata={preserved.register.source=SPRING_CLOUD}, scheduled=false, period=5000, stopped=false} to beat map.
+2021-08-27 17:51:09.748 [main] INFO  com.alibaba.nacos.client.naming - [REGISTER-SERVICE] public registering service DEFAULT_GROUP@@service-edu with instance: Instance{instanceId='null', ip='10.0.6.13', port=8001, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD}}
+2021-08-27 17:51:09.784 [main] INFO  c.a.cloud.nacos.registry.NacosServiceRegistry - nacos registry, DEFAULT_GROUP service-edu 10.0.6.13:8001 register finished
+2021-08-27 17:51:10.331 [main] INFO  icu.junyao.eduService.EduApplication - Started EduApplication in 7.852 seconds (JVM running for 9.117)
+2021-08-27 17:51:10.332 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state LivenessState changed to CORRECT
+2021-08-27 17:51:10.335 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-120.77.81.245_8848] [subscribe] edu-dev.properties+DEFAULT_GROUP
+2021-08-27 17:51:10.336 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-120.77.81.245_8848] [add-listener] ok, tenant=, dataId=edu-dev.properties, group=DEFAULT_GROUP, cnt=1
+2021-08-27 17:51:10.336 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-120.77.81.245_8848] [subscribe] edu.properties+DEFAULT_GROUP
+2021-08-27 17:51:10.337 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-120.77.81.245_8848] [add-listener] ok, tenant=, dataId=edu.properties, group=DEFAULT_GROUP, cnt=1
+2021-08-27 17:51:10.337 [main] INFO  com.alibaba.nacos.client.config.impl.ClientWorker - [fixed-120.77.81.245_8848] [subscribe] edu+DEFAULT_GROUP
+2021-08-27 17:51:10.337 [main] INFO  com.alibaba.nacos.client.config.impl.CacheData - [fixed-120.77.81.245_8848] [add-listener] ok, tenant=, dataId=edu, group=DEFAULT_GROUP, cnt=1
+2021-08-27 17:51:10.338 [main] INFO  o.s.boot.availability.ApplicationAvailabilityBean - Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-08-27 17:51:10.782 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - new ips(1) service: DEFAULT_GROUP@@service-edu@@DEFAULT -> [{"instanceId":"10.0.6.13#8001#DEFAULT#DEFAULT_GROUP@@service-edu","ip":"10.0.6.13","port":8001,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@service-edu","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+2021-08-27 17:51:10.787 [com.alibaba.nacos.client.naming.updater] INFO  com.alibaba.nacos.client.naming - current ips:(1) service: DEFAULT_GROUP@@service-edu@@DEFAULT -> [{"instanceId":"10.0.6.13#8001#DEFAULT#DEFAULT_GROUP@@service-edu","ip":"10.0.6.13","port":8001,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@service-edu","metadata":{"preserved.register.source":"SPRING_CLOUD"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+2021-08-27 17:54:03.608 [http-nio-8001-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-27 17:54:03.608 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-08-27 17:54:03.612 [http-nio-8001-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2021-08-27 17:54:05.778 [http-nio-8001-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2021-08-27 17:54:06.598 [http-nio-8001-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

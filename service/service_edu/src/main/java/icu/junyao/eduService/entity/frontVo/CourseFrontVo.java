@@ -10,7 +10,7 @@ import lombok.Data;
 public class CourseFrontVo {
 
     @ApiModelProperty(value = "课程名称")
-    private String title;
+    private String courseName;
 
     @ApiModelProperty(value = "讲师id")
     private String teacherId;

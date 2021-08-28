@@ -4,6 +4,7 @@ package icu.junyao.eduService.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import icu.junyao.commonUtils.R;
+import icu.junyao.eduService.constant.EduConstants;
 import icu.junyao.eduService.entity.EduTeacher;
 import icu.junyao.eduService.entity.vo.EduTeacherQuery;
 import icu.junyao.eduService.service.EduTeacherService;
@@ -125,6 +126,7 @@ public class EduTeacherController {
     @CacheEvict(allEntries = true)
     @PostMapping("addTeacher")
     public R addTeacher(@RequestBody EduTeacher eduTeacher) {
+        eduTeacher.setAvatar(eduTeacher.getAvatar() == null ? EduConstants.DEFAULT_TEACHER_COVER : eduTeacher.getAvatar());
         boolean save = eduTeacherService.save(eduTeacher);
         return save ? R.ok() : R.error();
     }
