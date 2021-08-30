@@ -1,9 +1,11 @@
 package icu.junyao.eduService.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import icu.junyao.eduService.constant.EduConstants;
+import icu.junyao.eduService.entity.EduComment;
 import icu.junyao.eduService.entity.EduCourse;
 import icu.junyao.eduService.entity.EduCourseDescription;
 import icu.junyao.eduService.entity.frontVo.CourseFrontVo;
@@ -11,10 +13,7 @@ import icu.junyao.eduService.entity.frontVo.CourseWebVo;
 import icu.junyao.eduService.entity.vo.CourseInfoVo;
 import icu.junyao.eduService.entity.vo.CoursePublishVo;
 import icu.junyao.eduService.mapper.EduCourseMapper;
-import icu.junyao.eduService.service.EduChapterService;
-import icu.junyao.eduService.service.EduCourseDescriptionService;
-import icu.junyao.eduService.service.EduCourseService;
-import icu.junyao.eduService.service.EduVideoService;
+import icu.junyao.eduService.service.*;
 import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
@@ -45,6 +44,7 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
     private final EduCourseDescriptionService courseDescriptionService;
     private final EduVideoService eduVideoService;
     private final EduChapterService chapterService;
+    private final EduCommentService eduCommentService;
 
 
     /**
@@ -131,7 +131,11 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         //3 根据课程id删除描述
         courseDescriptionService.removeById(courseId);
 
-        //4 根据课程id删除课程本身
+        //4 删除课程评论
+        eduCommentService.remove(Wrappers.lambdaQuery(EduComment.class)
+                .eq(EduComment::getCourseId, courseId));
+
+        //5 根据课程id删除课程本身
         int result = baseMapper.deleteById(courseId);
         if (result == 0) {
             throw new JunYaoException(20001, "删除失败");

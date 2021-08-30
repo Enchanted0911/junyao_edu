@@ -1,70 +1,12 @@
-2021-08-28 13:54:54.590 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 13:54:54.636 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 13:54:59.412 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 13:55:00.648 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 13:55:00.740 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 13:55:05.577 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 15:23:59.459 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 15:23:59.502 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 15:24:01.967 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:24:02.930 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:24:03.015 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:24:04.609 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 15:50:39.411 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 15:50:39.462 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 15:50:42.208 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:50:43.352 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:50:43.443 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 15:50:45.259 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 16:50:05.609 [http-nio-8001-exec-7] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@49204218 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
-2021-08-28 17:00:31.083 [Thread-2] WARN  com.alibaba.nacos.common.http.HttpClientBeanHolder - [HttpClientBeanHolder] Start destroying common HttpClient
-2021-08-28 17:00:31.083 [Thread-13] WARN  com.alibaba.nacos.common.notify.NotifyCenter - [NotifyCenter] Start destroying Publisher
-2021-08-28 17:00:48.718 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 17:00:48.762 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 17:00:51.279 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:00:52.218 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:00:52.309 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:00:54.035 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 17:06:28.756 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 17:06:28.801 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 17:06:31.502 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:06:32.505 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:06:32.608 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 17:06:34.497 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 17:28:13.719 [http-nio-8001-exec-9] WARN  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@11a7d796 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
-2021-08-28 18:02:00.590 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 18:02:00.636 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 18:02:03.169 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:02:04.115 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:02:04.207 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:02:05.917 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 18:11:09.722 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 18:11:09.762 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 18:11:12.324 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:11:13.300 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:11:13.394 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:11:15.107 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 18:30:28.578 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 18:30:28.618 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 18:30:31.908 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:30:33.157 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:30:33.293 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:30:35.785 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 18:43:01.243 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 18:43:01.287 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 18:43:03.990 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:43:04.936 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:43:05.026 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:43:06.821 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 18:49:03.532 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 18:49:03.574 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 18:49:06.139 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:49:07.468 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:49:07.586 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 18:49:09.504 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2021-08-28 19:06:40.898 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
-2021-08-28 19:06:40.936 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
-2021-08-28 19:06:44.138 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 19:06:45.276 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 19:06:45.394 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
-2021-08-28 19:06:47.412 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-08-29 19:49:39.981 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
+2021-08-29 19:49:40.027 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
+2021-08-29 19:49:42.381 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 19:49:43.351 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 19:49:43.447 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 19:49:45.169 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-08-29 20:43:46.538 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu] & group[DEFAULT_GROUP]
+2021-08-29 20:43:46.585 [main] WARN  c.a.cloud.nacos.client.NacosPropertySourceBuilder - Ignore the empty nacos configuration and get it based on dataId[edu.properties] & group[DEFAULT_GROUP]
+2021-08-29 20:43:49.240 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 20:43:50.251 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 20:43:50.335 [main] WARN  o.s.cloud.openfeign.FeignClientFactoryBean - The provided URL is empty. Will try picking an instance via load-balancing.
+2021-08-29 20:43:51.986 [main] WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
