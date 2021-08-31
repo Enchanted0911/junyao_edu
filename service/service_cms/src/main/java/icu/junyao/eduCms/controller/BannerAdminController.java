@@ -35,7 +35,7 @@ public class BannerAdminController {
      * @param limit
      * @return
      */
-    @GetMapping("pageBanner/{page}/{limit}")
+    @PostMapping("pageBanner/{page}/{limit}")
     public R pageBanner(@PathVariable long page, @PathVariable long limit, @RequestBody(required = false) BannerReq bannerReq) {
         Page<CrmBanner> pageBanner = new Page<>(page,limit);
         LambdaQueryWrapper<CrmBanner> wrapper = Wrappers.lambdaQuery();
