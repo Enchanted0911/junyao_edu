@@ -33,9 +33,10 @@ public class EduTeacherServiceImpl extends ServiceImpl<EduTeacherMapper, EduTeac
     }
 
     @Override
-    public Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageParam) {
+    public Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageParam, String teacherName) {
         QueryWrapper<EduTeacher> wrapper = new QueryWrapper<>();
         wrapper.orderByDesc("id");
+        wrapper.like("name", teacherName == null ? "" : teacherName);
         //把分页数据封装到pageTeacher对象
         baseMapper.selectPage(pageParam,wrapper);
 

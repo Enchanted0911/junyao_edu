@@ -27,8 +27,9 @@ public interface EduTeacherService extends IService<EduTeacher> {
 
     /**
      * 获取讲师分页列表信息
-     * @param pageTeacher
+     * @param pageTeacher 分页信息
+     * @param teacherName 教师关键字
      * @return
      */
-    Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher);
+    Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher, String teacherName);
 }
