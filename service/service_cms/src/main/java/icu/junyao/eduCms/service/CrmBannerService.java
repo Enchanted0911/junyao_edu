@@ -17,7 +17,22 @@ public interface CrmBannerService extends IService<CrmBanner> {
 
     /**
      * 查询所有banner
+     *
      * @return
      */
     List<CrmBanner> selectAllBanner();
+
+    /**
+     * 新增一条banner
+     *
+     * @param crmBanner 待新增的banner
+     */
+    void saveUniqueTitle(CrmBanner crmBanner);
+
+    /**
+     * 更新一条banner
+     *
+     * @param banner 待更新的banner
+     */
+    void updateUniqueTitle(CrmBanner banner);
 }

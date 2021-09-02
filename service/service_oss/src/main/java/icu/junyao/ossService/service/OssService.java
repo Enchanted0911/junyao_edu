@@ -6,17 +6,13 @@ import org.springframework.web.multipart.MultipartFile;
  * @author wu
  */
 public interface OssService {
-    /**
-     * 上传头像到oss
-     * @param file
-     * @return
-     */
-    String uploadFileAvatar(MultipartFile file);
 
     /**
-     * 上传课程封面到oss
-     * @param file
-     * @return
+     * 上传图片到oss
+     *
+     * @param file 待上传图片
+     * @param basePath 上传的基本路径
+     * @return 上传后的url
      */
-    String uploadFileCover(MultipartFile file);
+    String uploadPicture(MultipartFile file, String basePath);
 }

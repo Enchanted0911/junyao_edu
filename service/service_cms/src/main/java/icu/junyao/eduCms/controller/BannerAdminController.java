@@ -49,13 +49,13 @@ public class BannerAdminController {
     }
 
     /**
-     * 2 添加banner
+     * 添加banner
      * @param crmBanner
      * @return
      */
     @PostMapping
     public R addBanner(@RequestBody CrmBanner crmBanner) {
-        bannerService.save(crmBanner);
+        bannerService.saveUniqueTitle(crmBanner);
         return R.ok();
     }
 
@@ -69,7 +69,7 @@ public class BannerAdminController {
     @ApiOperation(value = "修改Banner")
     @PutMapping
     public R updateById(@RequestBody CrmBanner banner) {
-        bannerService.updateById(banner);
+        bannerService.updateUniqueTitle(banner);
         return R.ok();
     }
 

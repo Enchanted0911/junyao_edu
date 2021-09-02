@@ -1,10 +1,12 @@
 package icu.junyao.eduCms.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import icu.junyao.eduCms.entity.CrmBanner;
 import icu.junyao.eduCms.mapper.CrmBannerMapper;
 import icu.junyao.eduCms.service.CrmBannerService;
+import icu.junyao.serviceBase.exceptionHandler.JunYaoException;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -22,8 +24,6 @@ import java.util.List;
 @Service
 public class CrmBannerServiceImpl extends ServiceImpl<CrmBannerMapper, CrmBanner> implements CrmBannerService {
 
-
-
     /**
      * 查询所有banner
      * @return
@@ -37,5 +37,27 @@ public class CrmBannerServiceImpl extends ServiceImpl<CrmBannerMapper, CrmBanner
         //last方法，拼接sql语句
         wrapper.last("limit 2");
         return baseMapper.selectList(null);
+    }
+
+    @Override
+    @CacheEvict(value = "banner",key = "'selectIndexList'")
+    public void saveUniqueTitle(CrmBanner crmBanner) {
+        CrmBanner banner = super.getOne(Wrappers.lambdaQuery(CrmBanner.class)
+                .eq(CrmBanner::getTitle, crmBanner.getTitle()));
+        if (banner != null) {
+            throw new JunYaoException(20001, "已经存在相同标题的banner!");
+        }
+        super.save(crmBanner);
+    }
+
+    @Override
+    public void updateUniqueTitle(CrmBanner crmBanner) {
+        CrmBanner banner = super.getOne(Wrappers.lambdaQuery(CrmBanner.class)
+                .eq(CrmBanner::getTitle, crmBanner.getTitle())
+                .ne(CrmBanner::getId, crmBanner.getId()));
+        if (banner != null) {
+            throw new JunYaoException(20001, "已经存在相同标题的banner!");
+        }
+        super.updateById(crmBanner);
     }
 }
