@@ -5,6 +5,7 @@ import icu.junyao.commonUtils.JwtUtils;
 import icu.junyao.eduUserCenter.entity.UcenterMember;
 import icu.junyao.eduUserCenter.entity.vo.RegisterVo;
 import icu.junyao.eduUserCenter.mapper.UcenterMemberMapper;
+import icu.junyao.eduUserCenter.req.PasswordReq;
 import icu.junyao.eduUserCenter.service.UcenterMemberService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import icu.junyao.eduUserCenter.utils.MD5;
@@ -134,5 +135,18 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
     @Override
     public Integer countRegisterDay(String day) {
         return baseMapper.countRegisterDay(day);
+    }
+
+    @Override
+    public void updatePassword(PasswordReq passwordReq) {
+        UcenterMember user = super.getById(passwordReq.getId());
+        if (!MD5.encrypt(passwordReq.getOldPassword()).equals(user.getPassword())) {
+            throw new JunYaoException(20001, "密码错误!");
+        }
+        if (user.getIsDisabled()) {
+            throw new JunYaoException(20001, "账号已冻结!请联系管理员");
+        }
+        user.setPassword(MD5.encrypt(passwordReq.getNewPassword()));
+        super.updateById(user);
     }
 }

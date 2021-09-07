@@ -40,4 +40,11 @@ public class OssController {
         String url = ossService.uploadPicture(file, FileContants.BANNER_PATH);
         return R.ok().data("url", url);
     }
+
+    @PostMapping
+    @RequestMapping("/member")
+    public R uploadOssFileMember(@RequestPart("file") MultipartFile file) {
+        String url = ossService.uploadPicture(file, FileContants.MEMBER_PATH);
+        return R.ok().data("url", url);
+    }
 }

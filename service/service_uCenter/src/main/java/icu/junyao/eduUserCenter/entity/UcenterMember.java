@@ -3,6 +3,7 @@ package icu.junyao.eduUserCenter.entity;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -13,7 +14,9 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -51,11 +54,14 @@ public class UcenterMember implements Serializable {
     @ApiModelProperty(value = "昵称")
     private String nickname;
 
-    @ApiModelProperty(value = "性别 1 女，2 男")
+    @ApiModelProperty(value = "性别 1 男，2 女")
     private Integer sex;
 
-    @ApiModelProperty(value = "年龄")
-    private Integer age;
+    @ApiModelProperty(value = "生日")
+    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate birthday;
 
     @ApiModelProperty(value = "用户头像")
     private String avatar;

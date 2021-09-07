@@ -6,12 +6,14 @@ import icu.junyao.commonUtils.R;
 import icu.junyao.commonUtils.ordervo.UcenterMemberOrder;
 import icu.junyao.eduUserCenter.entity.UcenterMember;
 import icu.junyao.eduUserCenter.entity.vo.RegisterVo;
+import icu.junyao.eduUserCenter.req.PasswordReq;
 import icu.junyao.eduUserCenter.service.UcenterMemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 /**
  * <p>
@@ -51,7 +53,11 @@ public class UcenterMemberController {
         return R.ok();
     }
 
-
+    @PutMapping
+    public R updateUserInfo(@RequestBody UcenterMember ucenterMember) {
+        memberService.updateById(ucenterMember);
+        return R.ok();
+    }
 
     /**
      * 根据token获取用户信息
@@ -95,6 +101,12 @@ public class UcenterMemberController {
     public R countRegister(@PathVariable String day) {
         Integer count = memberService.countRegisterDay(day);
         return R.ok().data("countRegister",count);
+    }
+
+    @PutMapping("password")
+    public R updatePassword(@Valid @RequestBody PasswordReq passwordReq) {
+        memberService.updatePassword(passwordReq);
+        return R.ok();
     }
 }
 

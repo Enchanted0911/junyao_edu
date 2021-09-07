@@ -3,6 +3,7 @@ package icu.junyao.eduUserCenter.service;
 import icu.junyao.eduUserCenter.entity.UcenterMember;
 import com.baomidou.mybatisplus.extension.service.IService;
 import icu.junyao.eduUserCenter.entity.vo.RegisterVo;
+import icu.junyao.eduUserCenter.req.PasswordReq;
 
 /**
  * <p>
@@ -39,4 +40,11 @@ public interface UcenterMemberService extends IService<UcenterMember> {
      * @return
      */
     Integer countRegisterDay(String day);
+
+    /**
+     * 更新密码
+     *
+     * @param passwordReq {@link PasswordReq}
+     */
+    void updatePassword(PasswordReq passwordReq);
 }
