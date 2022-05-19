@@ -41,7 +41,7 @@ public class IndexController {
      *
      * @return
      */
-    @GetMapping("menu")
+    @GetMapping("permission")
     public R getMenu() {
         //获取当前登录用户用户名
         String username = SecurityContextHolder.getContext().getAuthentication().getName();

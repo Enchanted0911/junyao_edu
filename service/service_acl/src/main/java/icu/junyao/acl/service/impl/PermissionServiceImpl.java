@@ -47,9 +47,7 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
         wrapper.orderByDesc("id");
         List<Permission> permissionList = baseMapper.selectList(wrapper);
 
-        List<Permission> result = build(permissionList);
-
-        return result;
+        return build(permissionList);
     }
 
     @Override
